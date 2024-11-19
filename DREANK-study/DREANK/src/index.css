@@ -1,0 +1,18 @@
+html,
+body,
+div,
+span,
+h1,
+ol,
+ul,
+li {
+  margin: 0;
+  list-style: none;
+}
+
+body {
+  padding-top: 75px;
+}
+a {
+  text-decoration: none; /* 링크의 밑줄 제거 */
+}
