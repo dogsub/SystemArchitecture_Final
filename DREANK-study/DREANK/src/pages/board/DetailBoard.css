@@ -1,0 +1,91 @@
+.title-detail {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: left;
+  color: #334eac;
+  padding: 1rem 10rem;
+}
+.top-detail {
+  display: inline-block;
+}
+.writing-button {
+  font-size: 0.7rem;
+  color: white;
+  background-color: #334eac;
+  width: 4rem;
+  margin: 0.8rem 10rem;
+}
+.search-window {
+  text-align: right;
+}
+.search-input {
+  font-size: 1rem;
+}
+
+.search-button {
+  font-size: 0.7rem;
+  color: white;
+  background-color: #334eac;
+  width: 4rem;
+  margin: 0.8rem;
+}
+.writing-lists2 {
+  box-shadow: 0 0 1px 1px rgba(99, 99, 99, 0.5);
+  border-radius: 0.5rem;
+  height: 30rem;
+}
+
+.popular-board2 {
+  border: 0.2rem solid #bad6eb;
+  padding: 1.5rem;
+  margin: 1rem;
+  width: 50rem;
+}
+.popular-board-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: left;
+}
+.writing-lists {
+  list-style-type: none;
+  padding: 0.2rem;
+}
+.writing-list {
+  font-size: 1rem;
+  text-align: left;
+  padding: 0.3rem;
+}
+li {
+  list-style-type: none;
+}
+ul {
+  list-style-type: none;
+  text-align: left;
+  margin: 0.3rem;
+  padding: 0.5rem;
+}
+.content {
+  font-size: 0.8rem;
+  color: grey;
+  text-align: left;
+  margin: 0.3rem;
+  padding: 0;
+}
+
+.editor-container {
+  height: 30rem; /* 원하는 높이로 조절 */
+}
+
+.title-input {
+  width: 100%; /* 제목 입력란을 에디터 너비에 맞춤 */
+  height: 1.5rem;
+  margin-bottom: 1rem; /* CKEditor와의 간격 */
+}
+
+.ck-editor__editable {
+  min-height: 30rem; /* 편집 가능 영역의 최소 높이 설정 */
+}
+
+.button-container {
+  margin-top: 1.3rem; /* 원하는 간격으로 조절 */
+}

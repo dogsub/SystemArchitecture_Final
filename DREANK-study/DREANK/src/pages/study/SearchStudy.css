@@ -1,0 +1,106 @@
+.entire-study-page {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #334EAC;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  
+  .input-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .input-tag,
+  .input-select .react-select__control,
+  .input-time-picker .react-select__control {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .input-select,
+  .input-time-picker {
+    width: 100%;
+  }
+  
+  .search-button {
+    background-color: #334EAC;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .study-title2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #334EAC;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .error-message {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .study-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .study-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .study-card h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #334EAC;
+  }
+  
+  .study-card p {
+    margin: 0.5rem 0;
+    color: #666;
+  }
+  
+  .no-results {
+    margin-top: 2rem;
+    font-size: 1rem;
+    color: #999;
+  }
