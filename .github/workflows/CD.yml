@@ -29,6 +29,9 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.DEPLOY_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
+          echo "Host *" > ~/.ssh/config
+          echo "StrictHostKeyChecking no" >> ~/.ssh/config
+          chmod 600 ~/.ssh/config
 
       - name: Deploy to Server
         env:
@@ -36,8 +39,8 @@ jobs:
           SPRING_DATASOURCE_USERNAME: ${{ secrets.SPRING_DATASOURCE_USERNAME }}
           SPRING_DATASOURCE_PASSWORD: ${{ secrets.SPRING_DATASOURCE_PASSWORD }}
         run: |
-          scp build/libs/your-backend.jar ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:/path/to/deploy/
-          ssh ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} <<EOF
+          scp -o StrictHostKeyChecking=no DREANK_BACK-back/build/libs/your-backend.jar ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:/path/to/deploy/
+          ssh -o StrictHostKeyChecking=no ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} <<EOF
             export SPRING_DATASOURCE_URL=${SPRING_DATASOURCE_URL}
             export SPRING_DATASOURCE_USERNAME=${SPRING_DATASOURCE_USERNAME}
             export SPRING_DATASOURCE_PASSWORD=${SPRING_DATASOURCE_PASSWORD}
