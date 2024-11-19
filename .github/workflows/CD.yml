@@ -20,7 +20,9 @@ jobs:
           distribution: 'temurin'
 
       - name: Build Backend
-        run: ./gradlew build
+        run: |
+          cd DREANK_BACK-back
+          ./gradlew build
 
       - name: Set up SSH
         run: |
