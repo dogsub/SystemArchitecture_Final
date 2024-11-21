@@ -39,7 +39,8 @@ jobs:
           SPRING_DATASOURCE_USERNAME: ${{ secrets.SPRING_DATASOURCE_USERNAME }}
           SPRING_DATASOURCE_PASSWORD: ${{ secrets.SPRING_DATASOURCE_PASSWORD }}
         run: |
-          scp -o StrictHostKeyChecking=no DREANK_BACK-back/build/libs/dreank-0.0.1-SNAPSHOT.jar app.jar ubuntu@${{ secrets.DEPLOY_HOST }}:/home/ubuntu/deploy/
+          ls -al ./DREANK_BACK-back/build/libs/
+          scp -o StrictHostKeyChecking=no ./DREANK_BACK-back/build/libs/dreank-0.0.1-SNAPSHOT.jar ubuntu@${{ secrets.DEPLOY_HOST }}:/home/ubuntu/deploy/dreank-backend-0.0.1-SNAPSHOT.jar
           ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.DEPLOY_HOST }} <<EOF
             export SPRING_DATASOURCE_URL=${SPRING_DATASOURCE_URL}
             export SPRING_DATASOURCE_USERNAME=${SPRING_DATASOURCE_USERNAME}
