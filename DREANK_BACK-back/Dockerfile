@@ -5,6 +5,6 @@ RUN gradle build --no-daemon
 
 FROM openjdk:17-jdk-slim
 WORKDIR /app
-COPY --from=build /home/gradle/project/build/libs/dreank-0.0.1-SNAPSHOT.>
+COPY --from=build /home/gradle/project/build/libs/dreank-0.0.1-SNAPSHOT.jar /app/app.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "/app/app.jar"]
