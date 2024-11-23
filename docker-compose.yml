@@ -3,23 +3,55 @@ services:
   frontend:
     build:
       context: ./DREANK-study/DREANK
-      dockerfile: DREANK-study/DREANK/Dockerfile
-    container_name: dreank_frontend
+      dockerfile: ./Dockerfile
+    container_name: dreankfrontend
     ports:
       - "80:80"
 
   backend:
     build:
-      context: ./DREANK_BACK
-      dockerfile: DREANK_BACK-back/Dockerfile
-    container_name: dreank_backend
+      context: ./DREANK_BACK-back
+      dockerfile: ./Dockerfile
+    container_name: dreankbackend
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://144.24.69.9.3:3306/dreank_test # 직접적인 ip가 아닌 mysql00(컨테이너 이름)
+      SPRING_DATASOURCE_URL: jdbc:mysql://10.0.0.83:3306/dreank_test
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: kimhy119@
     ports:
       - "8080:8080"
 
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    command:
+      - '--config.file=/prometheus/prometheus.yml'
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./prometheus:/prometheus
+      - ./prometheus/data:/prometheus/data
+    restart: always
+
+  grafana:
+    image: grafana/grafana-oss:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - grafana-data:/var/lib/grafana
+    restart: always
+
+
 networks:
   default:
     driver: bridge
+
+volumes:
+  grafana-data:
