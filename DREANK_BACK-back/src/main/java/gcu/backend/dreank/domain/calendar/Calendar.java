@@ -30,6 +30,7 @@ public class Calendar {
     @DateTimeFormat(pattern = "HH:mm:ss")
     private LocalTime startTime;
 
+    // 깃허브 액션 CI/CD Test1
     @Column(nullable = false)
     @DateTimeFormat(pattern = "HH:mm:ss")
     private LocalTime endTime;
