@@ -32,7 +32,7 @@ jobs:
             ${{ runner.os }}-gradle-
 
       - name: Grant execute Permission for gradlew
-        run: chmod +x gradlew
+        run: chmod +x ./DREANK_BACK-back/gradlew
 
       - name: Build with Gradle
-        run: ./gradlew build -x test
+        run: ./DREANK_BACK-back/gradlew build -x test
