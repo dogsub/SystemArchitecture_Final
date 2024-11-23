@@ -35,4 +35,6 @@ jobs:
         run: chmod +x ./DREANK_BACK-back/gradlew
 
       - name: Build with Gradle
-        run: ./DREANK_BACK-back/gradlew build -x test
+        run: |
+          cd DREANK_BACK-back
+          ./gradlew build -x test
