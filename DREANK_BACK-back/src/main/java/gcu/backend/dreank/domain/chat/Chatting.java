@@ -16,7 +16,7 @@ public class Chatting extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    //테스트 1ㅇ
+    //테스트 6
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id") //외래키는 user_id
     private User user;
