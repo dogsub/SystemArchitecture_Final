@@ -1,17 +1,13 @@
 version: "3.9"
 services:
   frontend:
-    build:
-      context: ./DREANK-study/DREANK
-      dockerfile: ./Dockerfile
+    image: your-dockerhub-username/dreank-frontend:latest
     container_name: dreankfrontend
     ports:
       - "80:80"
 
   backend:
-    build:
-      context: ./DREANK_BACK-back
-      dockerfile: ./Dockerfile
+    image: your-dockerhub-username/dreank-backend:latest
     container_name: dreankbackend
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://10.0.0.83:3306/dreank_test
@@ -47,7 +43,6 @@ services:
     volumes:
       - grafana-data:/var/lib/grafana
     restart: always
-
 
 networks:
   default:
