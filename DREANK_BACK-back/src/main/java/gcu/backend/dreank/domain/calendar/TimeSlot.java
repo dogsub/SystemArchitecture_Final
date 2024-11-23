@@ -10,7 +10,6 @@ import java.time.LocalTime;
 @Setter
 @AllArgsConstructor
 public class TimeSlot {
-    // test2
     private LocalTime startTime;
     private LocalTime endTime;
     private Day day;
